@@ -11,6 +11,6 @@ class ProjectsController < ApplicationController
   end
 
   def view
-    @projects = Project.order("created_at desc")
+    @projects = Project.where("status = ?", params[:status])
   end
 end
